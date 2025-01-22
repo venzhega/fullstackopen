@@ -49,7 +49,8 @@ const App = () => {
       })
       .catch((error) => {
         setErrorMessage(
-          `Note '${note.content}' was already removed from server`
+          error.response.data.error
+          // `Note '${note.content}' was already removed from server`
         );
         setTimeout(() => {
           setErrorMessage(null);
